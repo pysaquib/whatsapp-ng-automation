@@ -8,7 +8,7 @@
 const puppeteer = require('puppeteer');
 (async () => {
     //userDataDir key saves the session for first time login
-    const browser = await puppeteer.launch({ headless: false, userDataDir: "./puppeteer_data", defaultViewport: null, args: ['--start-maximized'] });
+    const browser = await puppeteer.launch({ headless: false, defaultViewport: null, args: ['--start-maximized'] });
     let phoneNum = '918981174121';
     let message = "Hi%20hELLO.%20Ignore%20this%20message%20I'm%20testing%20automation";
 
