@@ -1,7 +1,10 @@
 # whatsapp-ng-automation
 
+## Install Dependencies
+`npm install`
+
 ## Inital Run
-First run `firstTime.js` by `node firstTime.js`
+Login by initially running `login.js` by `node login.js`
 
 ## Main function call
 After successful login, run `node index.js`

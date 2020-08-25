@@ -6,13 +6,13 @@ const sendText = require('./sendText.js');
 
 getContacts()
 .then(res => {
-    // console.log(res)
+    console.log(res)
     /*
         res is the object that contains 
         the whatsapp number and all details 
         to be passed to the sendText() function
     */
-    sendText()
+    sendText(res)
 })
 .then(err => {
     console.log(err)
