@@ -22,7 +22,7 @@ module.exports = async function main(C) {
     let i = 0;
     (function timerCall(i) {
         setTimeout( () => {
-            sender('91'.concat(C[i]['Number']), C[i]['Whatstapp Text'])
+            sender('91'.concat(C[i]['Number']), C[i]['Whatsapp Text'])
             if(i <= C.length - 1) {
                 timerCall(i+1)
             }
