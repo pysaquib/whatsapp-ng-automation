@@ -6,7 +6,7 @@ const sendText = require('./sendText.js');
 
 getContacts()
 .then(res => {
-    console.log(res)
+    // console.log(res)
     /*
         res is the object that contains 
         the whatsapp number and all details 

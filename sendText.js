@@ -5,8 +5,8 @@ module.exports = async function main(C) {
 
     const browser = await puppeteer.launch({ headless: false, userDataDir: "./puppeteer_data", defaultViewport: null, args: ['--start-maximized'] });
 
-    async function sender(phoneNum, message) {
-    
+    async function sender(phoneNum) {
+        const message = `Hi, How are you doing>?`
         const page = await browser.newPage();
         await page.goto(`https://web.whatsapp.com/send?phone=+${phoneNum}&text=${message}`);         
         await page.waitForSelector(selector);
@@ -21,8 +21,10 @@ module.exports = async function main(C) {
 
     let i = 0;
     (function timerCall(i) {
+        const m = 
         setTimeout( () => {
-            sender('91'.concat(C[i]['Number']), C[i]['Whatstapp Text'])
+            console.log(C[i])
+            sender('91'.concat(C[i]['Number']))
             if(i <= C.length - 1) {
                 timerCall(i+1)
             }
