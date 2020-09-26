@@ -1,11 +1,12 @@
 # whatsapp-ng-automation
 
 ## Install Dependencies
-`npm install`
+`pip install -r requirements`
 
-## Inital Run
-Login by initially running `login.js` by `node login.js`
+## Run
+`python send_message.py`
 
-## Main function call
-After successful login, run `node index.js`
+When prompted to login, there would be a login_**.png created in the current directory, scan the QR code with your phone, then press ENTER in the terminal prompt.
 
+##Config
+Check `HEADLESS`, `DEFAULT_WAIT_TIMEOUT`, `CONTACTS_URL` in the constants section of the script to change these configs.
