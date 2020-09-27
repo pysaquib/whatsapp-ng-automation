@@ -1,7 +1,7 @@
 # whatsapp-ng-automation
 
 ## Install Dependencies
-`pip install -r requirements`
+`pip install -r requirements.txt`
 
 ## Run
 `python send_message.py`
