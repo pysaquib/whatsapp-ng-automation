@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 HEADLESS = True
-CONTACTS_URL = "https://sheetdb.io/api/v1/l2wmtxqv959h7"
+CONTACTS_URL = "https://sheetdb.io/api/v1/hws5wv565i8fz"
 DEFAULT_WAIT_TIMEOUT = 30
 
 MESSAGE_BOX_SELECTOR = "#main > footer > div._3ee1T._1LkpH.copyable-area > div._3uMse > div > div._3FRCZ.copyable-text.selectable-text"
@@ -61,21 +61,27 @@ def line_break(driver):
 
 def type_message(driver):
 	wait = WebDriverWait(driver, DEFAULT_WAIT_TIMEOUT)
-	messageBox = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, MESSAGE_BOX_SELECTOR)))
-	messageBox.click()
-	messageBox.send_keys("Hello!")
-	line_break(driver)
-	messageBox.send_keys("आशा है कि आप अच्छा कर रहे होंगे 😊 आपने प्रथम और नवगुरुकुल वेबिनार के लिए Register किया और घर पर एक वेबसाइट बनाने के बारे में सीखा। आपने नवगुरुकुल के कार्यक्रमों के बारे में भी जानकारी प्राप्त की, जो आपको सॉफ्टवेयर इंजीनियर बनने में मदद कर सकता है। यदि आपने वेबिनार को नहीं देखा है, तो इस लिंक पर जाएँ: https://www.youtube.com/watch?v=C7wqCuhQUIc&feature=youtu.be ")
-	line_break(driver)
-	messageBox.send_keys("यदि आप हमारे 3 महीने के ऑनलाइन कार्यक्रम में शामिल होने के इच्छुक हैं और अपने घर से कोडिंग सीखना चाहते हैं, तो कृपया इस लिंक का उपयोग करके Register करें और Test पूरा करें I")
-	line_break(driver)
-	messageBox.send_keys("https://docs.google.com/forms/d/e/1FAIpQLSftx_ZhmVdFUsn0-Nri_1lObt6YfKz0wuqAYnleLVJQ4PNQ4w/viewform?entry.1273225964=Pratham")
-	line_break(driver)
-	messageBox.send_keys("Test को Pass करने वाले छात्रों के लिए पाठ्यक्रम नि: शुल्क है I इस कार्यक्रम में शामिल होने के लिए आपको बस एक Basic स्मार्टफोन और इंटरनेट कनेक्शन की आवश्यकता होगी और आपको पूर्णता का Certificate और 1 साल के Program with Guaranteed jobs  का हिस्सा बनने का मौका मिलेगा।")
+	try:
+		messageBox = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, MESSAGE_BOX_SELECTOR)))
+		messageBox.click()
+		messageBox.send_keys("Hello!")
+		line_break(driver)
+		messageBox.send_keys("आशा है कि आप हमारे ऑनलाइन कार्यक्रम में कोडिंग सीख रहे हैं।")
+		line_break(driver)
+		messageBox.send_keys("यदि आप हमारे 1 साल के आवासीय कार्यक्रम में शामिल होना चाहते हैं, सॉफ्टवेयर इंजीनियरिंग में  गारंटीकृत नौकरियां प्राप्त करना चाहते हैं और प्रति माह  Rs 20000-40000 के बीच  कमाना चाहते हैं, कृपया इस लिंक पर क्लिक करें रजिस्टर करने के लिए:")
+		line_break(driver)
+		messageBox.send_keys("http://admissions.navgurukul.org/partnerLanding/chirag")
+		line_break(driver)
+		messageBox.send_keys("हमारे 1 वर्ष के आवासीय कार्यक्रम के बारे में जानने के लिए, नीचे दिए गए वीडियो देखें")
+		line_break(driver)
+		messageBox.send_keys("https://youtu.be/HjqfZ-Matyk")
+		send_message(driver)
+	except:
+		print("Number is invalid, skipping")
+
 
 def send_message(driver):
 	wait = WebDriverWait(driver, DEFAULT_WAIT_TIMEOUT)
-
 	sendBox = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, SEND_BUTTON_SELECTOR)))
 	sendBox.click()
 
@@ -98,7 +104,6 @@ if __name__ == '__main__':
 			input()
 
 		type_message(driver)
-		send_message(driver)
 		logging.info("Sent!")
 
 	driver.close()
