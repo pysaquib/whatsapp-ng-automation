@@ -2,7 +2,7 @@
 
 ## Install Dependencies
 `pip3 install -r requirements.txt`
-``pip3 install requests` to update the urllib version
+`pip3 install requests` to update the urllib version
 
 ## Install geckodriver for Firefox
 https://github.com/mozilla/geckodriver/releases
