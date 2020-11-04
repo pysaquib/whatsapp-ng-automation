@@ -8,7 +8,7 @@
 ## Install geckodriver for Firefox
 https://github.com/mozilla/geckodriver/releases
 
-Set the executable path: `PATH=$PATH:/path-to-geckodriver`
+Set the executable path: `export PATH=$PATH:/path-to-geckodriver`
 
 
 ## Run
